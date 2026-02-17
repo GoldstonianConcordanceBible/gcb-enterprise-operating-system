@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/proposal.schema.json",
+  "title": "Governance Proposal Schema",
+  "type": "object",
+  "required": ["proposal_id", "title", "type", "summary", "changes", "review"],
+  "properties": {
+    "proposal_id": { "type": "string" },
+    "title": { "type": "string" },
+    "type": { "type": "string", "enum": ["canon_change", "schema_change", "policy_change", "release", "bounty"] },
+    "summary": { "type": "string" },
+    "changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "action"],
+        "properties": {
+          "path": { "type": "string" },
+          "action": { "type": "string", "enum": ["add", "modify", "remove", "deprecate"] }
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "required": ["required_reviewers", "decision_rule"],
+      "properties": {
+        "required_reviewers": { "type": "array", "items": { "type": "string" } },
+        "decision_rule": { "type": "string" }
+      }
+    }
+  },
+  "additionalProperties": true
+}
