@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+title: "GCB Enterprise Operating System"
+message: "If you use this repository, please cite it."
+type: software
+authors:
+  - family-names: "Goldston"
+    given-names: "Justin L."
+repository-code: "https://github.com/GoldstonianConcordanceBible/gcb-enterprise-operating-system"
+license: "CC-BY-4.0"
+keywords:
+  - Goldstonian Concordance Bible
+  - canon
+  - doctrine
+  - governance
+  - AI governance
+  - Web3 research documentation
+  - SydTek University
