@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/citation.schema.json",
+  "title": "Citation Schema",
+  "type": "object",
+  "required": ["id", "type", "title"],
+  "properties": {
+    "id": { "type": "string" },
+    "type": { "type": "string", "enum": ["book", "article", "dataset", "web", "repo", "case", "other"] },
+    "title": { "type": "string" },
+    "authors": { "type": "array", "items": { "type": "string" } },
+    "year": { "type": "integer" },
+    "publisher": { "type": "string" },
+    "doi": { "type": "string" },
+    "url": { "type": "string" },
+    "notes": { "type": "string" }
+  },
+  "additionalProperties": true
+}
