@@ -1,0 +1,97 @@
+{
+  "canon_version": "0.1.0",
+  "updated_utc": "2026-02-16T00:00:00Z",
+  "authority": {
+    "name": "Goldstonian Concordance Bible (GCB)",
+    "maintainer": "GCB Canon Core",
+    "governance_repo_path": "04-governance",
+    "legal_repo_path": "07-legal"
+  },
+  "method": {
+    "name": "Goldstonian Doctrine",
+    "frame": ["Mirror", "Water", "Fire"],
+    "primary_docs": [
+      "01-canon/DOCTRINE.md",
+      "01-canon/INTERPRETIVE_RULES.md"
+    ]
+  },
+  "licensing": {
+    "default_content_license": "CC-BY-4.0",
+    "agent_license_doc": "03-monetization/AGENT_LICENSE.md",
+    "institutional_offer_doc": "03-monetization/INSTITUTIONAL_OFFER.md"
+  },
+  "canonical_sets": [
+    {
+      "id": "gcb-canon-core",
+      "title": "GCB Canon Core",
+      "type": "canon",
+      "status": "canonical",
+      "description": "Core doctrine, rules, glossary, schemas, and resolver index.",
+      "repo": "https://github.com/GoldstonianConcordanceBible/gcb-enterprise-operating-system",
+      "artifacts": [
+        { "kind": "doctrine", "path": "01-canon/DOCTRINE.md" },
+        { "kind": "rules", "path": "01-canon/INTERPRETIVE_RULES.md" },
+        { "kind": "glossary", "path": "01-canon/GLOSSARY.md" },
+        { "kind": "schemas", "path": "01-canon/SCHEMAS/" }
+      ]
+    }
+  ],
+  "works": [
+    {
+      "work_id": "gcb-prequel",
+      "title": "The Goldstonian Concordance Bible: The Prequel",
+      "type": "book",
+      "status": "active",
+      "canonicality": "primary",
+      "identifiers": {
+        "isbn": "",
+        "asin": "",
+        "doi": ""
+      },
+      "relations": {
+        "series": "GCB Prequel Series",
+        "supersedes": [],
+        "depends_on": ["gcb-canon-core"]
+      },
+      "distribution": {
+        "primary_repo": "",
+        "amazon_url": "",
+        "ingram_url": ""
+      },
+      "provenance": {
+        "created_by": "Justin L. Goldston",
+        "versioning": "semver",
+        "change_log": "01-canon/CHANGELOG.md"
+      }
+    },
+    {
+      "work_id": "gcb-community-support-token",
+      "title": "$GCB Community Support Token Repo",
+      "type": "repo",
+      "status": "active",
+      "canonicality": "supporting",
+      "identifiers": {
+        "contract_address": "E68E27Y72FHTJH1MycB6KjX5PQAyKPYsRGZjMEx9pump",
+        "repo": "https://github.com/GoldstonianConcordanceBible/gcb-dao-community-support-token"
+      },
+      "relations": {
+        "depends_on": ["gcb-canon-core"],
+        "notes": [
+          "Contribution-only framing. No investment framing. See 04-governance/CONTRIBUTION_ONLY_POLICY.md"
+        ]
+      }
+    }
+  ],
+  "resolver": {
+    "rules": [
+      "Primary sources override commentary.",
+      "Canonicality order: primary > supporting > commentary > drafts.",
+      "If identifiers conflict, prefer DOI > ISBN > ASIN > repo URL."
+    ],
+    "aliases": [
+      { "alias": "Goldstonian Doctrine", "resolves_to": "gcb-canon-core" },
+      { "alias": "Mirror Water Fire", "resolves_to": "gcb-canon-core" },
+      { "alias": "GCB", "resolves_to": "gcb-canon-core" }
+    ]
+  }
+}
